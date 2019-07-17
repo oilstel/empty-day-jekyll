@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<style>
+  body {
+    background: url('http://67.245.251.197:9080/axis-cgi/mjpg/video.cgi?resolution=1280x720');
+    background-size: 35%;
+    color: #fff;
+  }
+</style>
+
+<div class="home">
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <section>
+        <h2>Pots</h2>
+
+          {% assign posts_query = site.posts | where: "type", "pots" %}
+
+          {%- for post in site.posts -%}
+            {%- assign date_format = site.minima.date_format | default: "%B %-d, %Y" -%}
+              <div class="post-link-wrapper">
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                  <span class="dot" style="background: {{ post.color }}"></span>
+                  {{ post.title | escape }} {%- if post.type == 'interview' -%}&nbsp;<span class="type">[interview]</span>{%- endif -%}
+                </a>
+              </div>
+          {%- endfor -%}
+
+    </section><br />
+    
+    <p class="feed-subscribe"><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p>
+  {%- endif -%}
+  
+  <img src="https://www.nps.gov/webcams-hale/HaleSummitCamCrater.jpg" style="width:300px;border-radius: 100%;" />
+
+  <br /><br />
+
+  <br /><br />
+
+</div>

@@ -1,0 +1,26 @@
+<head>
+    <meta charset="utf-8">
+    <title>{% if page.is_home %}{{ site.title }}{% else %}{{ page.title }} — {{ site.title }}{% endif %}</title>
+    <meta name="description" content="Elliott Cost's blog, files, websites, and experiments.">
+    <meta name="author" content="Elliott Cost" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="{% if page.icon %}{{ page.icon }}{% else %}https://www.nps.gov/webcams-hale/HaleSummitCamCrater.jpg{% endif %}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@oilstel">
+    <meta name="twitter:title" content="{% if page.is_home %}{{ site.title }}{% else %}{{ page.title }} — {{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="Files, websites, and experiments...">
+    <meta name="twitter:image" content="{% if page.icon %}{{ page.icon }}{% else %}https://www.nps.gov/webcams-hale/HaleSummitCamCrater.jpg{% endif %}"/>
+    <meta property="og:image" content="{% if page.icon %}{{ page.icon }}{% else %}https://www.nps.gov/webcams-hale/HaleSummitCamCrater.jpg{% endif %}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{% if page.is_home %}{{ site.title }}{% else %}{{ page.title }} — {{ site.title }}{% endif %}"/>
+    <meta property="og:description" content="Files, websites, and experiments..."/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:url" content="https://elliott.computer"/>
+    <link rel="stylesheet" href="{{ "assets/css/style.css" | relative_url }}">
+
+    <style>
+        hr {
+            background: {{ page.color }}
+        }
+    </style>
+</head>

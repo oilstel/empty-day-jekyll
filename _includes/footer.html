@@ -1,0 +1,38 @@
+<footer>
+  {%- if page.layout != 'post' -%}
+    {%- unless page.layout != 'home' -%}
+      {%- if titles_size > 0 -%}
+        <nav>
+            {%- for path in page_paths -%}
+              {%- assign my_page = site.pages | where: "path", path | first -%}
+              {%- if my_page.title -%}
+              <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a><br />
+              {%- endif -%}
+            {%- endfor -%}
+        </nav>
+      {%- endif -%}
+    {%- endunless -%}
+
+
+    <br />
+
+    {%- assign date_format = site.minima.date_format | default: "%B %-d, %Y" -%}
+
+    {%- if page.hide_email == true -%}
+    {%- else -%}
+      {%- if site.email -%}
+      <a class="u-email" href="https://mail.google.com/mail/?view=cm&fs=1&to={{ site.email }}&su=Today is {{ site.time | date: date_format }}&body=..." target="_blank">{{ site.email }}</a>
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+</footer>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-81186367-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-81186367-3');
+</script>
