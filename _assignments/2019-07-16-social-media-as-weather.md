@@ -1,8 +1,8 @@
 ---
 title: "Social media as weather"
 date: 2016-07-16 03:00:00 -0400
-category:
-- assignment
+categories:
+- Assignments
 ---
 
 "Social media is like the weather. It's always changing."

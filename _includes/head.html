@@ -16,7 +16,8 @@
     <meta property="og:description" content="Files, websites, and experiments..."/>
     <meta property="og:locale" content="en_US"/>
     <meta property="og:url" content="https://elliott.computer"/>
-    <link rel="stylesheet" href="{{ "assets/css/style.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "assets/css/main.css" | relative_url }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <style>
         hr {
@@ -24,3 +25,7 @@
         }
     </style>
 </head>
+
+{%- assign default_paths = site.pages | map: "path" -%}
+{%- assign page_paths = site.header_pages | default: default_paths -%}
+{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
